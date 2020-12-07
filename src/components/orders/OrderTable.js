@@ -2,23 +2,23 @@ import React, { Component, useMemo } from 'react';
 import { connect } from 'react-redux';
 import {TableUI} from '../TableUI';
 
-class ProductTable extends Component {
+class OrderTable extends Component {
 
   render() {
       console.log(this.props.productCollection);
       const columns = [
           {
-            Header: 'Product',
+            Header: 'Order product',
             accessor: 'productName'
           },
           {
-            Header: 'Inventory',
-            accessor: 'inventoryAmount'
+            Header: 'Order Amount',
+            accessor: 'orderAmount'
           }
         ];
     return (
       <div>
-        {this.props.productCollection.products.length > 0 ? <TableUI columns={columns} data={this.props.productCollection.products} /> : ''}
+        {this.props.ordersCollection.orders.length > 0 ? <TableUI columns={columns} data={this.props.ordersCollection.orders} /> : ''}
       </div>
     );
   }
@@ -26,4 +26,4 @@ class ProductTable extends Component {
 
 const mapStateToProps = state => state;
 
-export default connect(mapStateToProps)(ProductTable);
+export default connect(mapStateToProps)(OrderTable);

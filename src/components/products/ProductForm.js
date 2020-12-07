@@ -10,6 +10,7 @@ class ProductForm extends React.Component {
         super(props);
         this.state = {productName: '', inventoryAmount: 0}
     }
+
     changeHandler = e => {
         if (e.target.name === 'inventoryAmount' && e.target.value < 0) {
             e.target.value = 0;
@@ -18,6 +19,10 @@ class ProductForm extends React.Component {
             ...this.state,
             [e.target.name]: e.target.value
         })
+    }
+
+    addProductHandler  = () => {
+        this.props.addProduct(this.state);
     }
     render() {
         return (
@@ -32,7 +37,7 @@ class ProductForm extends React.Component {
                   startIcon={<Add />}
                   style={{marginTop: '1vh'}}
                   disabled={this.state.inventoryAmount === 0}
-                  onClick={() => {this.props.addProduct(this.state)}}
+                  onClick={this.addProductHandler}
                 >
                   {this.state.productName ? `Add ${this.state.inventoryAmount} units of ${this.state.productName}` : 'Add'}
                 </Button>
