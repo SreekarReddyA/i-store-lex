@@ -1,6 +1,7 @@
+import MainView from './views/MainView'
 function App() {
   return (
-    <div>React application wireframe for iLex Store</div>
+    <div><MainView/></div>
   );
 }
 
