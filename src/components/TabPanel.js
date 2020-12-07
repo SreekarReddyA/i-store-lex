@@ -1,4 +1,3 @@
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 
@@ -9,13 +8,14 @@ function TabPanel(props) {
       <div
         role="tabpanel"
         hidden={value !== index}
+        style={{background: 'inherit'}}
         id={`scrollable-prevent-tabpanel-${index}`}
         aria-labelledby={`scrollable-prevent-tab-${index}`}
         {...other}
       >
         {value === index && (
           <Box p={3}>
-            <Typography>{children}</Typography>
+              {children}
           </Box>
         )}
       </div>

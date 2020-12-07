@@ -14,3 +14,14 @@ export const getMainViewStyles = makeStyles((theme) => ({
       'aria-controls': `scrollable-prevent-tabpanel-${index}`,
     };
   }
+
+  export const getModalProperties = makeStyles((theme) => ({
+    modal: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    button: {
+        backgroundColor: '#3f51b5'
+    }
+  }));
